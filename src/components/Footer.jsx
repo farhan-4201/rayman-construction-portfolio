@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Link } from "react-router-dom";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,24 +12,6 @@ const Footer = () => {
               Building excellence since 2005. We are committed to providing quality construction services for all your
               needs.
             </p>
-            <div className="flex space-x-4">
-              <Link to="#" className="bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-colors">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link to="#" className="bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link to="#" className="bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-colors">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link to="#" className="bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </div>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
@@ -75,7 +57,7 @@ const Footer = () => {
               </li>
               <li className="flex">
                 <Phone className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">(123) 456-7890</span>
+                <span className="text-gray-400">(197) 4009989</span>
               </li>
               <li className="flex">
                 <Mail className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
@@ -103,7 +85,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

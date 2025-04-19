@@ -64,7 +64,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center space-x-6">
           <div className="flex items-center">
             <Phone className="h-4 w-4 text-yellow-500 mr-2" />
-            <span className="text-sm">(123) 456-7890</span>
+            <span className="text-sm">197 4009989</span>
           </div>
           <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">Get a Quote</button>
         </div>
