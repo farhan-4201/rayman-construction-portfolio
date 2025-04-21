@@ -66,7 +66,11 @@ const Header = () => {
             <Phone className="h-4 w-4 text-yellow-500 mr-2" />
             <span className="text-sm">197 4009989</span>
           </div>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">Get a Quote</button>
+          <Link to="/contact">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">
+              Get a Quote
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -113,9 +117,11 @@ const Header = () => {
                 <MapPin className="h-5 w-5 text-yellow-500 mr-3" />
                 <span>123 Construction Way, Building City</span>
               </div>
-              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">
-                Get a Quote
-              </button>
+              <Link to="/contact">
+                <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">
+                  Get a Quote
+                </button>
+              </Link>
             </div>
           </div>
         </div>
