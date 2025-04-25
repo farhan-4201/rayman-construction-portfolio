@@ -1,37 +1,27 @@
 import React from 'react'
-import { Building, Home, Warehouse, Wrench, PaintBucket, Ruler } from 'lucide-react'
+import { Warehouse, Wrench, PaintBucket, Ruler } from 'lucide-react'
 
 const services = [
   {
-    icon: Building,
-    title: 'Commercial Construction',
-    description: 'Office buildings, retail spaces, and industrial facilities built to your specifications.'
-  },
-  {
-    icon: Home,
-    title: 'Residential Construction',
-    description: 'Custom homes and residential developments with attention to detail and quality.'
-  },
-  {
     icon: Warehouse,
     title: 'Industrial Projects',
-    description: 'Manufacturing plants, warehouses, and industrial facilities designed for efficiency.'
+    description: 'Manufacturing plants, warehouses, and industrial facilities designed for efficiency.',
   },
   {
     icon: Wrench,
     title: 'Renovations',
-    description: 'Modernize and upgrade existing structures while maintaining their character.'
+    description: 'Modernize and upgrade existing structures while maintaining their character.',
   },
   {
     icon: PaintBucket,
     title: 'Interior Finishing',
-    description: 'High-quality interior work including painting, flooring, and custom installations.'
+    description: 'High-quality interior work including painting, flooring, and custom installations.',
   },
   {
     icon: Ruler,
     title: 'Project Planning',
-    description: 'Comprehensive project planning and management from start to finish.'
-  }
+    description: 'Comprehensive project planning and management from start to finish.',
+  },
 ]
 
 const ServicesSection = () => {
@@ -49,7 +39,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
               <div className="inline-block p-3 bg-blue-100 rounded-lg mb-4">
-                {React.createElement(service.icon, { className: "w-6 h-6 text-blue-600" })}
+                {React.createElement(service.icon, { className: 'w-6 h-6 text-blue-600' })}
               </div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>

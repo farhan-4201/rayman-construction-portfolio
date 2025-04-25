@@ -1,129 +1,131 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ArrowRight } from "lucide-react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const ProjectCard = ({ title, category, image }) => {
+const ProjectCard = ({ title, category }) => {
   return (
-    <div className="overflow-hidden group rounded-lg shadow-md">
-      <div className="relative overflow-hidden">
-        <img
-          src={image || "/images/project-placeholder.jpg"}
-          alt={title}
-          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <Link
-            to="/projects"
-            className="bg-yellow-500 text-black p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-          >
-            <ArrowRight className="h-5 w-5" />
-            <span className="sr-only">View project</span>
-          </Link>
-        </div>
-      </div>
-      <div className="p-4">
-        <span className="text-sm text-yellow-500 font-medium">{category}</span>
-        <h3 className="font-bold text-lg mt-1">{title}</h3>
-      </div>
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+      <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
+      <p className="text-gray-600">{category}</p>
     </div>
-  )
-}
+  );
+};
 
 const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState("all")
+  const [activeCity, setActiveCity] = useState("Brooklyn");
 
-  const projects = [
-    {
-      id: 1,
-      title: "Modern Office Complex",
-      category: "Commercial",
-      image: "/images/project1.jpg",
-    },
-    {
-      id: 2,
-      title: "Luxury Residential Tower",
-      category: "Residential",
-      image: "/images/project2.jpg",
-    },
-    {
-      id: 3,
-      title: "Manufacturing Facility",
-      category: "Industrial",
-      image: "/images/project3.jpg",
-    },
-    {
-      id: 4,
-      title: "Shopping Mall Renovation",
-      category: "Commercial",
-      image: "/images/project4.jpg",
-    },
-    {
-      id: 5,
-      title: "Custom Family Home",
-      category: "Residential",
-      image: "/images/project5.jpg",
-    },
-    {
-      id: 6,
-      title: "Warehouse Complex",
-      category: "Industrial",
-      image: "/images/project6.jpg",
-    },
-  ]
+  const projectsByCity = {
+    Brooklyn: [
+      {
+        id: 1,
+        title: "Modern Office Complex",
+        category: "Commercial",
+      },
+      {
+        id: 2,
+        title: "Luxury Residential Tower",
+        category: "Residential",
+      },
+    ],
+    Queens: [
+      {
+        id: 3,
+        title: "Shopping Mall Renovation",
+        category: "Commercial",
+      },
+      {
+        id: 4,
+        title: "Custom Family Home",
+        category: "Residential",
+      },
+    ],
+    "Staten Island": [
+      {
+        id: 5,
+        title: "Warehouse Complex",
+        category: "Industrial",
+      },
+    ],
+    "New Jersey State": [
+      {
+        id: 6,
+        title: "Manufacturing Facility",
+        category: "Industrial",
+      },
+    ],
+  };
 
-  const filteredProjects =
-    activeTab === "all" ? projects : projects.filter((project) => project.category.toLowerCase() === activeTab)
+  const images = [
+    "/rayman/interior1.jpeg",
+    "/rayman/interior2.jpeg",
+    "/rayman/interior3.jpeg",
+    "/rayman/interior4.jpeg",
+    "/rayman/interior5.jpeg",
+  ];
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+  };
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Our Projects</h2>
-          <div className="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Our Projects</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Browse through our portfolio of completed projects that showcase our expertise and commitment to quality.
+            Explore our featured projects showcasing our expertise and commitment to quality.
           </p>
         </div>
 
+        {/* Slider */}
+        <Slider {...sliderSettings}>
+          {images.map((image, index) => (
+            <div key={index} className="overflow-hidden rounded-lg">
+              <img
+                src={image}
+                alt={`Project ${index + 1}`}
+                className="w-full h-96 object-cover"
+              />
+            </div>
+          ))}
+        </Slider>
+
+        {/* City Tabs */}
         <div className="mb-8">
           <div className="flex flex-wrap justify-center gap-2">
-            <button
-              className={`px-4 py-2 rounded ${activeTab === "all" ? "bg-yellow-500 text-black" : "bg-gray-200"}`}
-              onClick={() => setActiveTab("all")}
-            >
-              All
-            </button>
-            <button
-              className={`px-4 py-2 rounded ${activeTab === "commercial" ? "bg-yellow-500 text-black" : "bg-gray-200"}`}
-              onClick={() => setActiveTab("commercial")}
-            >
-              Commercial
-            </button>
-            <button
-              className={`px-4 py-2 rounded ${activeTab === "residential" ? "bg-yellow-500 text-black" : "bg-gray-200"}`}
-              onClick={() => setActiveTab("residential")}
-            >
-              Residential
-            </button>
-            <button
-              className={`px-4 py-2 rounded ${activeTab === "industrial" ? "bg-yellow-500 text-black" : "bg-gray-200"}`}
-              onClick={() => setActiveTab("industrial")}
-            >
-              Industrial
-            </button>
+            {Object.keys(projectsByCity).map((city) => (
+              <button
+                key={city}
+                className={`px-4 py-2 rounded ${
+                  activeCity === city ? "bg-yellow-500 text-black" : "bg-gray-200"
+                } hover:bg-yellow-400 transition-colors`}
+                onClick={() => setActiveCity(city)}
+              >
+                {city}
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} title={project.title} category={project.category} image={project.image} />
+        {/* Projects List */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsByCity[activeCity].map((project) => (
+            <ProjectCard key={project.id} title={project.title} category={project.category} />
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;

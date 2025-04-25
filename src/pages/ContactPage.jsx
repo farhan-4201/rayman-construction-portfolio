@@ -23,7 +23,7 @@ const ContactPage = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('https://formspree.io/f/xgvagaze', {
+      const response = await fetch('https://formspree.io/f/mzzrbllg', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

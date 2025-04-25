@@ -1,4 +1,4 @@
-import { Building2, Hammer, Users, HardHat, Ruler, PaintBucket, Truck, Wrench } from "lucide-react";
+import { Wrench, PaintBucket, Ruler, HardHat } from "lucide-react";
 
 const ServiceCard = ({ icon, title, description }) => {
   return (
@@ -43,29 +43,9 @@ const ServicesPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ServiceCard
-              icon={<Building2 className="h-16 w-16 text-yellow-500" />}
-              title="Commercial Construction"
-              description="We specialize in building commercial spaces that are functional, aesthetically pleasing, and aligned with your business objectives. From office buildings to retail spaces, we deliver projects that meet your needs and budget."
-            />
-            <ServiceCard
-              icon={<Hammer className="h-16 w-16 text-yellow-500" />}
-              title="Residential Construction"
-              description="Build your dream home with our expert residential construction services. Whether you're looking for a custom home, a renovation, or an addition, our team will bring your vision to life with quality craftsmanship."
-            />
-            <ServiceCard
-              icon={<Users className="h-16 w-16 text-yellow-500" />}
-              title="Project Management"
-              description="Our experienced project managers ensure your construction project runs smoothly from start to finish. We handle scheduling, budgeting, resource allocation, and quality control to deliver successful outcomes."
-            />
-            <ServiceCard
-              icon={<Ruler className="h-16 w-16 text-yellow-500" />}
-              title="Architectural Design"
-              description="Our architectural design services combine creativity with functionality to create spaces that are both beautiful and practical. We work closely with you to understand your needs and preferences."
-            />
-            <ServiceCard
-              icon={<HardHat className="h-16 w-16 text-yellow-500" />}
-              title="Construction Consulting"
-              description="Benefit from our expertise in construction with our consulting services. We provide advice on feasibility, cost estimation, material selection, and other aspects of your construction project."
+              icon={<Wrench className="h-16 w-16 text-yellow-500" />}
+              title="Renovations"
+              description="Modernize and upgrade existing structures while maintaining their character."
             />
             <ServiceCard
               icon={<PaintBucket className="h-16 w-16 text-yellow-500" />}
@@ -73,9 +53,14 @@ const ServicesPage = () => {
               description="Complete your space with our interior finishing services. From painting and flooring to cabinetry and fixtures, we pay attention to every detail to create a polished final product."
             />
             <ServiceCard
-              icon={<Truck className="h-16 w-16 text-yellow-500" />}
-              title="Site Preparation"
-              description="Proper site preparation is crucial for a successful construction project. Our services include clearing, excavation, grading, and other necessary work to prepare your site for building."
+              icon={<Ruler className="h-16 w-16 text-yellow-500" />}
+              title="Project Planning"
+              description="Comprehensive project planning and management from start to finish."
+            />
+            <ServiceCard
+              icon={<HardHat className="h-16 w-16 text-yellow-500" />}
+              title="Construction Consulting"
+              description="Benefit from our expertise in construction with our consulting services. We provide advice on feasibility, cost estimation, material selection, and other aspects of your construction project."
             />
             <ServiceCard
               icon={<Wrench className="h-16 w-16 text-yellow-500" />}
