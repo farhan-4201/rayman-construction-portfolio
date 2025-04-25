@@ -37,11 +37,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/team" className="text-gray-400 hover:text-yellow-500 transition-colors">
-                  Team
-                </Link>
-              </li>
-              <li>
                 <Link to="/contact" className="text-gray-400 hover:text-yellow-500 transition-colors">
                   Contact
                 </Link>
@@ -53,7 +48,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex">
                 <MapPin className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">123 Construction Way, Building City, BC 12345</span>
+                <span className="text-gray-400">2565 Ocean Parkway, Brooklyn, NY 11235</span>
               </li>
               <li className="flex">
                 <Phone className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
@@ -61,7 +56,7 @@ const Footer = () => {
               </li>
               <li className="flex">
                 <Mail className="h-5 w-5 text-yellow-500 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">info@constructcompany.com</span>
+                <span className="text-gray-400">raymanconstruction537@gmail.com</span>
               </li>
             </ul>
           </div>
