@@ -2,9 +2,9 @@ import { Wrench, PaintBucket, Ruler, HardHat } from "lucide-react";
 
 const ServiceCard = ({ icon, title, description }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-8">
+    <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
       <div className="mb-6">{icon}</div>
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
+      <h3 className="text-xl font-semibold mb-4 text-gray-800">{title}</h3>
       <p className="text-gray-600">{description}</p>
     </div>
   );
@@ -12,7 +12,7 @@ const ServiceCard = ({ icon, title, description }) => {
 
 const ServicesPage = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-br from-yellow-50 via-white to-yellow-100 min-h-screen">
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-[800px]"
@@ -21,7 +21,7 @@ const ServicesPage = () => {
         <div className="absolute inset-0 bg-black/70 z-10" />
         <div className="container mx-auto px-4 relative z-20 flex flex-col items-center justify-center h-full text-white text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="text-yellow-500">Services</span>
+            Our <span className="text-yellow-400">Services</span>
           </h1>
           <p className="text-lg max-w-2xl">
             Comprehensive construction solutions tailored to your specific needs
@@ -30,11 +30,11 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">What We Offer</h2>
-            <p className="text-gray-600">
+            <h2 className="text-3xl font-bold mb-6 text-gray-800">What We Offer</h2>
+            <p className="text-gray-600 text-lg">
               At Construct, we provide a wide range of construction services to meet all your building needs. From
               initial planning to final completion, our team of experienced professionals is dedicated to delivering
               high-quality results that exceed your expectations.

@@ -6,13 +6,15 @@ import ContactSection from "../components/ContactSection";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="bg-gradient-to-br from-yellow-50 via-white to-yellow-100 min-h-screen">
       <HeroSection />
       <FeaturesSection />
+      <div className="bg-gradient-to-br from-yellow-50 via-white to-yellow-100 min-h-screen">
       <AboutSection />
+      </div>
       <ServicesSection />
       <ContactSection />
-    </>
+    </div>
   );
 };
 
