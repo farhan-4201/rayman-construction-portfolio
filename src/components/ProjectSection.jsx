@@ -88,17 +88,19 @@ const ProjectsSection = () => {
         </div>
 
         {/* Slider */}
-        <Slider {...sliderSettings}>
-          {images.map((image, index) => (
-            <div key={index} className="overflow-hidden rounded-lg">
-              <img
-                src={image}
-                alt={`Project ${index + 1}`}
-                className="w-full h-96 object-cover"
-              />
-            </div>
-          ))}
-        </Slider>
+        <div className="mb-12">
+          <Slider {...sliderSettings}>
+            {images.map((image, index) => (
+              <div key={index} className="overflow-hidden rounded-lg">
+                <img
+                  src={image}
+                  alt={`Project ${index + 1}`}
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
 
         {/* City Tabs */}
         <div className="mb-8">
