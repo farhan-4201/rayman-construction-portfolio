@@ -65,6 +65,7 @@ const ProjectPage = () => {
                   src={image}
                   alt={`Project ${index + 1}`}
                   className="w-full h-96 object-cover"
+                  loading="lazy" // Lazy loading added
                 />
               </div>
             ))}
