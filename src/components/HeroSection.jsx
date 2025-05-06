@@ -14,29 +14,34 @@ const HeroSection = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-  }, [images.length]); // Dependency added to ensure stability
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(goToNext, 5000);
     return () => clearInterval(interval);
-  }, [goToNext]); // No warning now, as goToNext is stable
+  }, [goToNext]);
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Slider Image */}
       <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
         className="w-full h-full object-cover transition-opacity duration-500"
       />
+
+      {/* Previous Button */}
       <button
         onClick={goToPrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-lg hover:bg-yellow-600"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent border-2 border-yellow-500 text-yellow-500 p-3 rounded-full shadow-lg hover:bg-yellow-500 hover:text-white transition-all"
       >
         ⬅
       </button>
+
+      {/* Next Button */}
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-lg hover:bg-yellow-600"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent border-2 border-yellow-500 text-yellow-500 p-3 rounded-full shadow-lg hover:bg-yellow-500 hover:text-white transition-all"
       >
         ➡
       </button>
