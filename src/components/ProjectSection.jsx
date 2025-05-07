@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -75,6 +75,16 @@ const ProjectsSection = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
+    nextArrow: (
+      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent border-2 border-yellow-500 text-yellow-500 p-3 rounded-full shadow-lg hover:bg-yellow-500 hover:text-white transition-all cursor-pointer">
+        ➡
+      </div>
+    ),
+    prevArrow: (
+      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent border-2 border-yellow-500 text-yellow-500 p-3 rounded-full shadow-lg hover:bg-yellow-500 hover:text-white transition-all cursor-pointer">
+        ⬅
+      </div>
+    ),
   };
 
   return (
@@ -88,14 +98,14 @@ const ProjectsSection = () => {
         </div>
 
         {/* Slider */}
-        <div className="mb-12">
+        <div className="mb-12 w-full">
           <Slider {...sliderSettings}>
             {images.map((image, index) => (
-              <div key={index} className="overflow-hidden rounded-lg">
+              <div key={index} className="overflow-hidden">
                 <img
                   src={image}
                   alt={`Project ${index + 1}`}
-                  className="w-full h-96 object-cover"
+                  className="w-full h-[600px] object-cover"
                 />
               </div>
             ))}
